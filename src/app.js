@@ -4,6 +4,8 @@ const hbs = require('hbs')
 const geocode = require('./utils/geocode')
 const weather = require('./utils/weather')
 
+console.log("Poop")
+
 
 const app = express()
 const publicDirPath = path.join(__dirname,'../public')
