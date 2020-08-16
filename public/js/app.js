@@ -10,7 +10,7 @@ weatherForm.addEventListener('submit',(e)=>{
     firstMessage.textContent = 'Loading...'
     secondMessage.textContent = ''
     
-    const url = `weather?address=${location}`
+    const url = `/weather?address=${location}`
 
     fetch(url).then((response)=>{
         response.json().then((data)=>{
@@ -18,7 +18,7 @@ weatherForm.addEventListener('submit',(e)=>{
                 firstMessage.textContent = data.error
             }else{
                 firstMessage.textContent = data.location
-                secondMessage.textContent = data.currently
+                secondMessage.textContent = `It is ${data.currently} degrees outside. ${data.forecast} There's a ${data.chanceOfRain*100} chance of rain.`
             }
             
         })
